@@ -28,6 +28,7 @@
         .hrader {
             background-color: orange;
             height: 5%;
+            text-align: right;
         }
 
         .main {
@@ -39,26 +40,50 @@
             padding: 10px;
         }
         .leftArea {
-            background-color: blue;
+            background-color: aqua;
         }
         .rightArea {
             background-color: red;
         }
 
         .pictureArea {
-            background-color: aqua;
-            height: 100%;
+            background-color: yellow;
+            border: 1px solid;
         }
+
         .shortBox {
-            background-color: darkgreen;
-            height: 50%;
+            background-color: greenyellow;
         }
+        .shortBox > div {
+            display: flex;
+        }
+        .shortBox > div > p {
+            border: 1px solid;
+            margin: 3px;
+            padding: 10px;
+            width: 50%;
+        }
+
         .longBox {
             background-color: darksalmon;
-            height: 50%;
+        }
+        .longBox > div {
+            border: 1px solid;
+            margin: 3px;
+            padding: 10px;
         }
     </style>
 </head>
+
+<script>
+    function editbtn(){
+        alert('수정');
+    }
+    function deletebtn(){
+        alert('삭제');
+    }
+</script>
+
 <body>
     <div class="nav">
         <div>
@@ -66,21 +91,44 @@
         </div>
     </div>
     <div class="hrader">
-        <button class="btn btn-primary" type="submit">수정</button>
-        <button class="btn btn-primary" type="submit">삭제</button>
+        <button class="btn btn-primary" type="submit" onclick="editbtn()">수정</button>
+        <button class="btn btn-primary" type="submit" onclick="deletebtn()">삭제</button>
     </div>
     <div class="main">
         <div class="leftArea">
-            <div class="pictureArea">
+            <p class="pictureArea">
                 사진
-            </div>
+            </p>
         </div>
         <div class="rightArea">
             <div class="shortBox">
-                이름, MBTI, 생일, 자신의 장점
+                <div>
+                    <p>
+                        이름
+                    </p>
+                    <p>
+                        MBTI
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        생일
+                    </p>
+                    <p>
+                        자신의 장점
+                    </p>
+                </div>
             </div>
             <div class="longBox">
-                블로그 주소, 깃 주소, 기타 등등....
+                <div>
+                    블로그 주소
+                </div>
+                <div>
+                    깃 주소
+                </div>
+                <div>
+                    기타
+                </div>
             </div>
         </div>
     </div>
